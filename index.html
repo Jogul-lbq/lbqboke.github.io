@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎来到我的博客</title>
+    <!-- 联网样式 -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="style/图标文件.css">
+    <link rel="stylesheet" href="style/基础样式.css">
+    <link rel="stylesheet" href="style/头部导航样式.css">
+    <link rel="stylesheet" href="style/欢迎区域样式.css">
+    <link rel="stylesheet" href="style/内容区块样式.css">
+    <link rel="stylesheet" href="style/组件样式.css">
+    <link rel="stylesheet" href="style/动画样式.css">
+    <link rel="stylesheet" href="style/粒子样式.css">
+    <link rel="stylesheet" href="style/左侧导航样式.css">
+    <link rel="stylesheet" href="style/时间样式.css">
+    <link rel="stylesheet" href="style/音乐播放器样式.css">
+</head>
+
+<body>
+    <div class="title-bar">
+        <div class="logo">
+            <span class="title-text">PERSONAL BLOG</span>
+        </div>
+        <div class="nav-center">
+
+            <ul class="content-bar">
+                <li><a href="#learning">学习</a></li>
+                <li><a href="#entertainment">娱乐</a></li>
+                <li><a href="#life">生活</a></li>
+                <li><a href="#feelings">感触</a></li>
+                <li><a href="#thoughts">随想</a></li>
+            </ul>
+        </div>
+        <div class="head-picture">
+            <img src="image/headimg.jpg" alt="">
+        </div>
+    </div>
+    <div class="welcome-container">
+        <span class="typewriter-container"></span>
+        <span class="cursor"></span>
+    </div>
+
+
+    <div class="down-arrow-container">
+        <div class="down-arrow"></div>
+    </div>
+    <div class="left-nav">
+        <div class="main-nav-item" data-target="learning">学习笔记</div>
+        <div class="sub-nav" data-for="learning">
+            <div class="sub-nav-item" data-target="java">Java 基础语法</div>
+            <div class="sub-nav-item" data-target="python">Python 基础语法</div>
+            <div class="sub-nav-item" data-target="javascript">JavaScript 基础语法</div>
+            <div class="sub-nav-item" data-target="c">C 语言基础语法</div>
+            <div class="sub-nav-item" data-target="cpp">C++ 基础语法</div>
+            <div class="sub-nav-item" data-target="mysql">MySQL 基础语法</div>
+        </div>
+
+        <div class="main-nav-item" data-target="entertainment">游戏娱乐</div>
+        <div class="sub-nav" data-for="entertainment">
+            <div class="sub-nav-item" data-target="wzry">王者荣耀</div>
+            <div class="sub-nav-item" data-target="hpjy">和平精英</div>
+        </div>
+
+        <div class="main-nav-item" data-target="life">大学生活</div>
+        <div class="sub-nav" data-for="life">
+            <div class="sub-nav-item" data-target="study">专升本学习日常</div>
+        </div>
+
+        <div class="main-nav-item" data-target="feelings">学习构思</div>
+        <div class="sub-nav" data-for="feelings">
+            <div class="sub-nav-item" data-target="insight">专升本学习感悟</div>
+        </div>
+        <div class="main-nav-item" data-target="thoughts">生活随想</div>
+        <div class="sub-nav" data-for="thoughts">
+            <div class="sub-nav-item" data-target="random-thoughts">日常随想</div>
+        </div>
+    </div>
+    <div class="profile-card">
+        <div class="profile-item">姓名：路博强</div>
+        <div class="profile-item">学校：兰州工业学院</div>
+        <div class="profile-item">学院：计算机与人工智能</div>
+        <div class="profile-item">班级：软件25-2班</div>
+        <div class="profile-item">专业：软件工程</div>
+    </div>
+    <div class="time-card">
+        <div class="time-item">当前时间：<span id="current-time"></span></div>
+    </div>
+    <!-- 音乐播放器 -->
+    <div class="music-player">
+        <div class="player-title">音乐播放器</div>
+        <div class="player-controls">
+            <button class="control-btn prev-btn" title="上一首">
+                <img src="图标文件/backward-step.svg" alt="上一首" class="icon" width="24" height="24">
+            </button>
+            <button class="control-btn play-btn" title="播放/暂停">
+                <img src="图标文件/play.svg" alt="播放" class="icon" width="24" height="24">
+            </button>
+            <button class="control-btn next-btn" title="下一首">
+                <img src="图标文件/forward-step.svg" alt="下一首" class="icon" width="24" height="24">
+            </button>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="time-display">
+                <span class="current-time">00:00</span>
+                <span class="total-time">03:45</span>
+            </div>
+        </div>
+        <div class="now-playing">
+            <span>正在播放：未知曲目</span>
+        </div>
+        <audio id="audio-player" loop>
+            <source src="" type="audio/mpeg">
+        </audio>
+    </div>
+    </div>
+    <!-- 学习内容区域 -->
+    <div id="learning" class="learning-section">
+        <h2 class="section-title">学习笔记</h2>
+
+        <!-- Java 部分 -->
+        <div class="language-card">
+            <h3 class="language-title">☕ Java 基础语法</h3>
+            <div class="language-meta">
+                <span>学习日期：2025-11-15</span>
+                <span>难度：★★☆☆☆</span>
+            </div>
+            <p class="language-desc">
+                Java 是一种面向对象的编程语言，具有跨平台性，通过 JVM（Java 虚拟机）实现一次编写多处运行。
+            </p>
+
+            <div class="knowledge-points">
+                <h4>核心知识点：</h4>
+                <ul>
+                    <li> 基本数据类型：byte(1字节)、short(2字节)、int(4字节)、long(8字节)、float(4字节)、double(8字节)、char(2字节)、boolean</li>
+                    <li> 引用类型：类、接口、数组，默认值为null</li>
+                    <li> 访问修饰符：public > protected > default > private</li>
+                    <li> 封装：通过private修饰符隐藏内部实现，提供public getter/setter方法访问</li>
+                    <li> 继承：使用extends关键字，Java单继承多实现特性</li>
+                    <li> 多态：通过方法重写和接口实现体现，运行时动态绑定</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+                <h4>代码示例：</h4>
+                <pre><code class="java">public class HelloWorld {
+    public static void main(String[] args) {
+        // 基本输出语句
+        System.out.println("Hello, World!");
+        
+        // 变量定义与使用
+        int a = 10;
+        String name = "Java";
+        System.out.println("变量a的值：" + a);
+        System.out.println("语言名称：" + name);
+    }
+}</code></pre>
+            </div>
+
+            <div class="practice-exercise">
+                <h4>练习题：</h4>
+                <p>编写一个Java程序，实现两个整数的加减乘除运算，并处理除数为0的异常。</p>
+                <button class="show-answer">查看答案</button>
+                <div class="answer-content">
+                    <pre><code class="java">public class Calculator {
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 0;
+        
+        try {
+            System.out.println("加法：" + (num1 + num2));
+            System.out.println("减法：" + (num1 - num2));
+            System.out.println("乘法：" + (num1 * num2));
+            System.out.println("除法：" + (num1 / num2));
+        } catch (ArithmeticException e) {
+            System.out.println("除法错误：除数不能为0");
+        }
+    }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Python 部分 -->
+        <div class="language-card">
+            <h3 class="language-title">🐍 Python 基础语法</h3>
+            <div class="language-meta">
+                <span>学习日期：2025-11-15</span>
+                <span>难度：★☆☆☆☆</span>
+            </div>
+            <p class="language-desc">
+                Python 是一种简洁易学的高级编程语言，以可读性强著称，采用缩进代替大括号来定义代码块。
+            </p>
+
+            <div class="knowledge-points">
+                <h4>核心知识点：</h4>
+                <ul>
+                    <li> 变量特性：动态类型，无需声明类型，直接赋值即可使用</li>
+                    <li> 数据结构：列表(list)、元组(tuple)、字典(dict)、集合(set)</li>
+                    <li> 函数特性：支持默认参数、关键字参数、不定长参数(*args, **kwargs)</li>
+                    <li> 面向对象：通过class定义类，支持继承、多态，无访问修饰符</li>
+                    <li> 模块系统：使用import导入模块，from...import...选择性导入</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+                <h4>代码示例：</h4>
+                <pre><code class="python"># 基本输出
+print("Hello, World!")
+
+# 变量定义
+a = 10
+name = "Python"
+print(f"变量a的值：{a}")
+print(f"语言名称：{name}")
+
+# 列表操作
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(f"水果：{fruit}")</code></pre>
+            </div>
+
+            <div class="practice-exercise">
+                <h4>练习题：</h4>
+                <p>编写一个Python函数，计算列表中所有偶数的和。</p>
+                <button class="show-answer">查看答案</button>
+                <div class="answer-content">
+                    <pre><code class="python">def sum_even_numbers(numbers):
+    total = 0
+    for num in numbers:
+        if num % 2 == 0:
+            total += num
+    return total
+
+# 测试
+nums = [1, 2, 3, 4, 5, 6]
+print(f"偶数和：{sum_even_numbers(nums)}")  # 输出：12</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript 部分 -->
+        <div class="language-card">
+            <h3 class="language-title">🌐 JavaScript 基础语法</h3>
+            <div class="language-meta">
+                <span>学习日期：2025-11-15</span>
+                <span>难度：★★☆☆☆</span>
+            </div>
+            <p class="language-desc">
+                JavaScript 是网页开发的核心语言之一，主要用于实现网页的交互效果。它是一种弱类型、动态的编程语言。
+            </p>
+
+            <div class="knowledge-points">
+                <h4>核心知识点：</h4>
+                <ul>
+                    <li> 变量声明：var(函数级作用域)、let(块级作用域)、const(常量)</li>
+                    <li> 数据类型：Number、String、Boolean、Null、Undefined、Symbol、Object</li>
+                    <li> 函数定义：函数声明、函数表达式、箭头函数(=>)</li>
+                    <li> DOM操作：document.getElementById()、document.querySelector()等方法</li>
+                    <li> 事件处理：addEventListener()绑定事件，事件冒泡与捕获</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+                <h4>代码示例：</h4>
+                <pre><code class="javascript">// 基本输出
+console.log("Hello, World!");
+
+// 变量定义
+var a = 10;
+var name = "JavaScript";
+console.log(`变量a的值：${a}`);
+console.log(`语言名称：${name}`);
+
+// DOM操作示例
+var button = document.createElement('button');
+button.textContent = "点击我";
+button.addEventListener('click', () => {
+    alert("按钮被点击了！");
+});
+document.body.appendChild(button);</code></pre>
+            </div>
+
+            <div class="practice-exercise">
+                <h4>练习题：</h4>
+                <p>编写一个JavaScript函数，实现点击按钮切换页面背景颜色的功能。</p>
+                <button class="show-answer">查看答案</button>
+                <div class="answer-content">
+                    <pre><code class="javascript">function createColorButton() {
+    var button = document.createElement('button');
+    button.textContent = "切换背景色";
+    button.style.padding = "10px 20px";
+    button.style.cursor = "pointer";
+    
+    var colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff"];
+    var colorIndex = 0;
+    
+    button.addEventListener('click', () => {
+        document.body.style.backgroundColor = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+    });
+    
+    document.body.appendChild(button);
+}
+
+// 调用函数创建按钮
+createColorButton();</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- 数据库内容 -->
+        <div class="language-card">
+            <h3 class="language-title">💾 MySQL 基础语法</h3>
+            <div class="language-meta">
+                <span>学习日期：2025-11-15</span>
+                <span>难度：★★★☆☆</span>
+            </div>
+            <p class="language-desc">
+                MySQL 是一种关系型数据库管理系统，广泛应用于Web开发中。它支持SQL（结构化查询语言），
+                用于管理数据库中的数据。MySQL具有开源、高效、稳定等特点，是许多网站的首选数据库。
+            </p>
+
+            <div class="knowledge-points">
+                <h4>核心知识点：</h4>
+                <ul>
+                    <li> 数据库操作：CREATE DATABASE、DROP DATABASE、USE DATABASE</li>
+                    <li> 表操作：CREATE TABLE、ALTER TABLE、DROP TABLE、TRUNCATE TABLE</li>
+                    <li> 数据操作：INSERT、SELECT、UPDATE、DELETE（CRUD操作）</li>
+                    <li> 条件查询：WHERE、AND、OR、IN、BETWEEN、LIKE等关键字</li>
+                    <li> 聚合函数：COUNT()、SUM()、AVG()、MAX()、MIN()</li>
+                    <li> 连接查询：INNER JOIN、LEFT JOIN、RIGHT JOIN</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+                <h4>代码示例：</h4>
+                <pre><code class="sql">-- 创建数据库
+CREATE DATABASE IF NOT EXISTS myblog;
+USE myblog;
+
+-- 创建用户表
+CREATE TABLE IF NOT EXISTS users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 插入数据
+INSERT INTO users (username, password, email)
+VALUES ('admin', '123456', 'admin@example.com'),
+       ('user1', '654321', 'user1@example.com');
+
+-- 查询数据
+SELECT id, username, email FROM users WHERE id > 0;
+
+-- 更新数据
+UPDATE users SET password = 'newpassword' WHERE username = 'admin';
+
+-- 删除数据
+DELETE FROM users WHERE id = 2;</code></pre>
+            </div>
+        </div>
+        <div class="language-card">
+            <h3 class="language-title">🔧 C 语言基础语法</h3>
+            <div class="language-meta">
+                <span>学习日期：2025-11-16</span>
+                <span>难度：★★★☆☆</span>
+            </div>
+            <p class="language-desc">
+                C语言是一种面向过程的编程语言，由丹尼斯·里奇于1972年在贝尔实验室开发。它是许多现代编程语言的基础，
+                具有高效、灵活和接近硬件的特点，广泛应用于系统编程、嵌入式开发等领域。
+            </p>
+
+            <div class="knowledge-points">
+                <h4>核心知识点：</h4>
+                <ul>
+                    <li> 基本数据类型：char(1字节)、int(4字节)、float(4字节)、double(8字节)</li>
+                    <li> 指针：变量的内存地址，支持指针运算和多级指针</li>
+                    <li> 数组：相同类型元素的集合，通过下标访问，不进行边界检查</li>
+                    <li> 函数：程序的基本模块，支持递归调用和函数指针</li>
+                    <li> 预处理指令：#include、#define、#ifdef等，在编译前处理</li>
+                    <li> 内存管理：手动分配(malloc)和释放(free)动态内存</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+                <h4>代码示例：</h4>
+                <pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// 计算阶乘的函数
+int factorial(int n) {
+    if (n <= 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+int main() {
+    // 基本输出
+    printf("Hello, World!\n");
+    
+    // 变量定义与使用
+    int a = 10;
+    char name[] = "C Language";
+    printf("变量a的值：%d\n", a);
+    printf("语言名称：%s\n", name);
+    
+    // 调用函数
+    int num = 5;
+    printf("%d的阶乘是：%d\n", num, factorial(num));
+    
+    return 0;
+}</code></pre>
+            </div>
+
+            <div class="practice-exercise">
+                <h4>练习题：</h4>
+                <p>编写一个C程序，使用指针实现两个整数的交换。</p>
+                <button class="show-answer">查看答案</button>
+                <div class="answer-content">
+                    <pre><code class="c">#include &lt;stdio.h&gt;
+
+// 使用指针交换两个整数的值
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+    
+    printf("交换前：x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("交换后：x = %d, y = %d\n", x, y);
+    
+    return 0;
+}</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- C++部分 -->
+        <div class="language-card">
+            <h3 class="language-title">➕ C++ 基础语法</h3>
+            <div class="language-meta">
+                <span>学习日期：2025-11-16</span>
+                <span>难度：★★★★☆</span>
+            </div>
+            <p class="language-desc">
+                C++是在C语言基础上发展而来的编程语言，保留了C语言的高效性和灵活性，同时引入了面向对象编程的特性。
+                它广泛应用于系统开发、游戏引擎、高性能计算等领域，是一种功能强大且复杂的编程语言。
+            </p>
+
+            <div class="knowledge-points">
+                <h4>核心知识点：</h4>
+                <ul>
+                    <li> 面向对象：类(class)、对象、封装、继承、多态</li>
+                    <li> 标准模板库(STL)：vector、string、map等容器和算法</li>
+                    <li> 函数重载：同一作用域内同名函数，参数列表不同</li>
+                    <li> 运算符重载：自定义运算符对类对象的操作</li>
+                    <li> 引用：变量的别名，可作为函数参数和返回值</li>
+                    <li> 异常处理：try-catch-finally机制处理运行时错误</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+                <h4>代码示例：</h4>
+                <pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// 定义一个简单的类
+class Person {
+private:
+    string name;
+    int age;
+    
+public:
+    // 构造函数
+    Person(string n, int a) : name(n), age(a) {}
+    
+    // 成员函数
+    void introduce() {
+        cout << "我叫" << name << "，今年" << age << "岁。" << endl;
+    }
+    
+    // 年龄增长函数
+    void growOld() {
+        age++;
+    }
+};
+
+int main() {
+    // 基本输出
+    cout << "Hello, World!" << endl;
+    
+    // 创建对象
+    Person person("张三", 20);
+    person.introduce();
+    
+    // 调用对象方法
+    person.growOld();
+    person.introduce();
+    
+    return 0;
+}</code></pre>
+            </div>
+
+            <div class="practice-exercise">
+                <h4>练习题：</h4>
+                <p>编写一个C++程序，定义一个Shape基类和Circle、Rectangle派生类，实现多态特性计算面积。</p>
+                <button class="show-answer">查看答案</button>
+                <div class="answer-content">
+                    <pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+// 形状基类
+class Shape {
+public:
+    // 纯虚函数，计算面积
+    virtual double calculateArea() = 0;
+    // 虚析构函数
+    virtual ~Shape() {}
+};
+
+// 圆形类
+class Circle : public Shape {
+private:
+    double radius;
+    
+public:
+    Circle(double r) : radius(r) {}
+    
+    // 重写计算面积方法
+    double calculateArea() override {
+        return 3.14159 * radius * radius;
+    }
+};
+
+// 矩形类
+class Rectangle : public Shape {
+private:
+    double length;
+    double width;
+    
+public:
+    Rectangle(double l, double w) : length(l), width(w) {}
+    
+    // 重写计算面积方法
+    double calculateArea() override {
+        return length * width;
+    }
+};
+
+// 多态使用示例
+void printArea(Shape* shape) {
+    cout << "面积是：" << shape->calculateArea() << endl;
+}
+
+int main() {
+    Shape* circle = new Circle(5.0);
+    Shape* rectangle = new Rectangle(4.0, 6.0);
+    
+    printArea(circle);    // 输出圆形面积
+    printArea(rectangle); // 输出矩形面积
+    
+    delete circle;
+    delete rectangle;
+    
+    return 0;
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 娱乐内容区域 -->
+    <div id="entertainment" class="entertainment-section">
+        <h2 class="section-title">游戏娱乐</h2>
+
+        <!-- 王者荣耀内容 -->
+        <div class="language-card">
+            <h3 class="language-title">🏆 王者荣耀</h3>
+            <div class="language-meta">
+                <span>最近更新：2025-11-11</span>
+                <span>类型：MOBA</span>
+            </div>
+            <p class="language-desc">
+                王者荣耀是一款多人在线战术竞技游戏(MOBA)，玩家通过控制英雄进行5v5对战。游戏拥有丰富的英雄池和多样化的玩法模式，
+                包括经典对战、排位赛、娱乐模式等。每个英雄都有独特的技能和定位，需要团队协作才能取得胜利。
+            </p>
+
+            <div class="code-image-container">
+                <img src="image/wzry.jpg" alt="王者荣耀游戏截图" class="code-image">
+            </div>
+
+            <div class="practice-exercise">
+                <h4>游戏心得：</h4>
+                <p>1. 保持良好的经济发育是获胜的关键，合理补刀和打野能快速积累优势</p>
+                <p>2. 注意小地图，及时支援队友，避免被对方抓住机会</p>
+                <p>3. 团战时注意自身定位，坦克先手开团，输出注意走位</p>
+            </div>
+        </div>
+
+        <!-- 和平精英内容 -->
+        <div class="language-card">
+            <h3 class="language-title">🔫 和平精英</h3>
+            <div class="language-meta">
+                <span>最近更新：2025-11-11</span>
+                <span>类型：战术竞技</span>
+            </div>
+            <p class="language-desc">
+                和平精英是一款战术竞技类手游，百名玩家空降至一张地图，通过收集装备、淘汰对手来争取最后的胜利。
+                游戏拥有多种地图和模式，玩家可以选择单人、双人或四人组队模式，体验紧张刺激的射击对抗。
+            </p>
+
+            <div class="knowledge-points">
+                <h4>游戏技巧：</h4>
+                <ul>
+                    <li> 落点选择：根据航线选择合适的落地点，新手建议选择资源中等的区域</li>
+                    <li> 武器搭配：步枪+狙击枪是万能搭配，近距离和远距离都能应对</li>
+                    <li> 配件选择：枪口抑制器适合偷袭，补偿器适合正面刚枪</li>
+                    <li> 载具使用：吉普车适合越野，轿车适合公路行驶，摩托车灵活性高</li>
+                    <li> 决赛圈：提前占领有利地形，注意四周动静，避免暴露位置</li>
+                </ul>
+            </div>
+
+            <div class="code-image-container">
+                <img src="image/hpjy.jpg" alt="和平精英游戏截图" class="code-image">
+            </div>
+        </div>
+    </div>
+    <!-- 生活内容区域 -->
+    <div id="life" class="entertainment-section">
+        <h2 class="section-title">大学生活</h2>
+
+        <!-- 专升本学习生活 -->
+        <div class="language-card">
+            <h3 class="language-title">📚 专升本学习日常</h3>
+            <div class="language-meta">
+                <span>记录日期：2025-11-14</span>
+                <span>地点：兰州工业学院</span>
+                <span>专业：软件工程</span>
+            </div>
+            <p class="language-desc">
+                作为兰州工业学院专升本的软件工程学生，每天的生活充实而忙碌。早晨7点半准时出现在教室上早自习，预习当天的专业课程；
+                ，在宿舍进行编程练习；晚上还要在上晚自习，完成老师布置的项目作业。专升本的学习节奏比专科时更快，
+                需要投入更多精力在专业知识上，尤其是数据库、web和软件工程等核心课程。
+            </p>
+
+            <div class="knowledge-points">
+                <h4>本期计划：</h4>
+                <ul>
+                    <li>完成Java面向对象编程课程</li>
+                    <li>复习数据库原理，备战考试</li>
+                    <li>学习更复杂的python语法</li>
+                    <li>将学过的内容再一次复习</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 感触内容区域 -->
+    <div id="feelings" class="entertainment-section">
+        <h2 class="section-title">学习构思</h2>
+
+        <!-- 学习感悟 -->
+        <div class="language-card">
+            <h3 class="language-title">💡 专升本学习感悟</h3>
+            <div class="language-meta">
+                <span>记录日期：2025-11-12</span>
+                <span>标签：学习心得</span>
+            </div>
+            <p class="language-desc">
+                从专科到本科的学习过程，让我深刻体会到了学习深度的变化。专科阶段更注重应用技能的培养，而本科阶段则更强调理论基础和创新思维。
+                软件工程专业的学习不仅仅是掌握几种编程语言，更重要的是培养解决复杂问题的能力和系统设计的思维。
+            </p>
+
+            <div class="knowledge-points">
+                <h4>重要感悟：</h4>
+                <ul>
+                    <li> 编程能力的提升不仅在于写了多少代码，更在于是否写出了高质量的代码</li>
+                    <li> 理论知识很重要，它能帮助我们理解技术背后的原理，而不只是停留在使用层面</li>
+                    <li> 团队协作能力在软件开发中至关重要，学会与人合作比单打独斗更有效率</li>
+                    <li> 持续学习是程序员的必备素质，技术更新迭代快，必须保持学习的热情</li>
+                    <li> 解决问题的能力比记住知识点更重要，遇到问题先独立思考，再寻求帮助</li>
+                    <li> 专升本不是学历的终点，而是学习能力重塑的起点，真正的成长始于自主学习意识的觉醒</li>
+                    <li> 课堂笔记的价值不在工整，而在课后的二次梳理与思考，用自己的语言重构知识才是真掌握</li>
+                    <li> 不要因暂时的落后而焦虑，每个人的知识吸收节奏不同，找到自己的频率比盲目追赶更重要</li>
+                    <li> 专业课的深度理解需要结合实践，哪怕是简单的课程设计，亲手实现比看懂教程收获多十倍</li>
+                    <li> 图书馆的价值远超自习室，跨专业书籍的随机翻阅往往能带来意想不到的思维启发</li>
+                    <li> 向老师提问前先做足功课，带着具体问题请教比泛泛而谈"我听不懂"更能获得有效指导</li>
+                    <li> 组建学习小组要精不在多，3-4个目标一致的同伴互相督促，效率远高于独自苦读</li>
+                    <li> 定期复盘学习方法，如同优化代码逻辑，发现低效环节及时调整，比埋头刷题更重要</li>
+                    <li> 接受自己的知识盲区，遇到完全不懂的概念先标记再突破，避免因一个点卡住整个进度</li>
+                    <li> 理论课的公式定理要知其然更知其所以然，理解推导过程比死记硬背更利于灵活运用</li>
+                    <li> 珍惜每一次上台展示的机会，技术表达能力与编程能力同样重要，都是职场必备技能</li>
+                    <li> 不要忽视基础课程，编程语言会过时，但数据结构、算法思想等底层逻辑是持久的竞争力</li>
+                    <li> 考前突击能应付考试，但真正的知识内化需要长期积累，如同建楼，地基稳才能盖高层</li>
+                    <li> 尝试用教别人的方式检验学习效果，能清晰讲明白的知识才是真正属于自己的知识</li>
+                    <li> 合理分配时间，专业课与公共课平衡发展，避免出现"偏科"导致的整体竞争力下降</li>
+                    <li> 关注行业动态，把前沿技术资讯当作学习调味剂，既能拓宽视野又能增强学习动力</li>
+                    <li> 允许自己有适度的摆烂时刻，持续高压学习会导致效率下降，张弛有度才能走得更远</li>
+                    <li> 记录自己解决过的难题，建立个人"错题集"，这些都是未来求职时的隐形竞争力</li>
+                    <li> 学历提升的同时更要注重思维升级，从"完成任务"的被动心态转向"探索未知"的主动姿态</li>
+                    <li> 不要用"我基础差"自我设限，专升本的意义就是打破过去的标签，重新定义自己的可能性</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 生活感触内容 -->
+    <div id="thoughts" class="entertainment-section">
+        <h2 class="section-title">生活随想</h2>
+        <div class="language-card">
+            <h3 class="language-title">🌱 生活随想</h3>
+            <div class="language-meta">
+                <span>记录日期：2025-11-16</span>
+                <span>标签：生活态度</span>
+            </div>
+            <p class="language-desc">
+                生活如同写代码，计划好的流程总会遇到意外的 "bug"，重要的不是避免出错，而是培养快速定位并修复问题的能力
+            </p>
+            <p class="language-desc">
+                生活就像一条蜿蜒的河流，有时平缓如镜，有时湍急似瀑。我渐渐明白，重要的不是水流的速度，而是航行的姿态。学会在喧嚣中保持一份从容，在浮躁里守住一点清醒，便是对生活最好的回应。
+            </p>
+            <p>每一行代码都是思想的具象化，写得越多越明白：好的代码和优质的人生一样，都需要清晰的结构、适当的注释和不断的重构。</p>
+            <div class="knowledge-points">
+                <h4>生活态度：</h4>
+                <ul>
+                    <li> 不必苛求完美，接纳生活中的不圆满，才是真实的人生</li>
+                    <li> 珍惜日常的小确幸，一杯热茶、一本好书、一次真诚的交谈，都是生活的馈赠</li>
+                    <li> 保持对世界的好奇心，像孩子一样观察生活，会发现平凡中的不凡</li>
+                    <li> 学会与自己相处，独处时的思考比喧嚣时的附和更有价值</li>
+                    <li> 与其纠结无法改变的过去，不如专注可塑造的未来，生活的操作系统需要定期更新，但不必频繁重启</li>
+                    <li> 给生活留白，就像代码中的注释行，适当的空白能让整体结构更清晰，也让心灵有呼吸的空间</li>
+                    <li> 遇到困境时，像调试程序一样分步拆解问题，复杂问题往往有简单的突破口</li>
+                    <li> 保持终身学习的热情，如同持续迭代的软件版本，每一次更新都让自己更完善</li>
+                    <li> 给生活设定"版本迭代"计划，每月学习一项新技能，每年完成一次深度旅行，让成长有迹可循</li>
+                    <li> 像优化代码性能一样精简生活，定期"清理内存"——断舍离无用物品，告别消耗型社交</li>
+                    <li> 接纳"调试期"的不完美，刚接触新领域时允许自己笨拙，就像编译程序总会遇到几次报错</li>
+                    <li> 培养"离线模式"的能力，每天留一段不看屏幕的时间，让思绪像未被占用的进程一样自由流动</li>
+                    <li> 把困难当作"压力测试"，顺利时的成长是线性的，突破瓶颈后的进步才是指数级的</li>
+                </ul>
+            </div>
+
+            <div class="knowledge-points">
+                <h4>社会感触：</h4>
+                <ul>
+                    <li> 信息爆炸的时代，更需要培养独立思考能力，不被流量裹挟，不随波逐流</li>
+                    <li> 快节奏的生活中，人与人之间的真诚连接变得尤为珍贵</li>
+                    <li> 社会的进步不仅需要科技的发展，更需要人文关怀的温度</li>
+                    <li> 每个人都是社会的微小齿轮，做好自己分内之事，就是在为世界添砖加瓦</li>
+                    <li> 数字化时代，人与人的物理距离被拉近，但心与心的距离需要更多真诚互动来维系</li>
+                    <li> 技术发展应该服务于人的幸福，而不是让人成为算法的奴隶，保持人性的温度比追求效率更重要</li>
+                    <li> 社会就像一个大型分布式系统，每个节点的健康运行都关系到整体稳定，责任需要共同承担</li>
+                    <li> 在快速变化的时代，保持内心的锚点很重要，那些经过时间沉淀的价值观如同代码的核心架构，支撑着我们应对各种变化</li>
+                    <li> 数字鸿沟正在悄然拉大，有人用技术提升效率，有人被算法困在信息茧房，技术普惠需要更多人的努力</li>
+                    <li> 快节奏社会里，"慢慢来"反而成为稀缺能力——深度阅读、专注创作、耐心陪伴，这些慢动作正在变得珍贵</li>
+                    <li> 社交媒体让表达成本降低，但高质量的倾听却越来越少，真正的沟通需要双向的信息交换而非单向输出</li>
+                    <li> 职业无高低，但社会对"有用"的定义正在变得狭窄，那些守护平凡日常的工作同样值得尊重</li>
+                    <li> 环境问题如同未处理的内存泄漏，短期内不影响运行，长期却会导致系统崩溃，需要每个人编写"环保补丁"</li>
+                </ul>
+            </div>
+        </div>
+        <script src="javascript/页面滚动.js"></script>
+        <script src="javascript/元素动画.js"></script>
+        <script src="javascript/粒子效果.js"></script>
+        <script src="javascript/代码高亮.js"></script>
+        <script src="javascript/左侧导航交互.js"></script>
+        <script src="javascript/时间显示.js"></script>
+        <script src="javascript/音乐播放器.js"></script>
+        <!-- 联网下载 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/sql.min.js"></script>
+</body>
+
+</html>
