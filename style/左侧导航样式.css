@@ -1,0 +1,93 @@
+.left-nav {
+    position: sticky;
+    top: 5em;
+    left: 1.5em;
+    float: left;
+    width: 230px;
+    padding: 20px;
+    margin-top: 10em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+    height: fit-content;
+    max-height: calc(100vh - 8em);
+    overflow-y: auto;
+    z-index: 10;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.left-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.main-nav-item {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+.main-nav-item::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+}
+
+.main-nav-item.active::after {
+    content: "-";
+    transform: rotate(180deg);
+}
+
+.sub-nav {
+    padding-left: 15px;
+    margin: 5px 0 10px 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.8s ease;
+}
+
+.sub-nav.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.sub-nav-item {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sub-nav-item:hover,
+.sub-nav-item.active {
+    color: white;
+    transform: translateX(5px);
+}
+
+.learning-section,
+.entertainment-section {
+    margin-left: 280px;
+    margin-right: 280px;
+}
+
+@media (max-width: 1200px) {
+    .left-nav {
+        display: none;
+    }
+
+    .learning-section,
+    .entertainment-section {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

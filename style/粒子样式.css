@@ -1,0 +1,7 @@
+.particle {
+    position: fixed;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
